@@ -1,0 +1,1296 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  <!--
+
+  	Serious Face by nodethirtythree + Templated.org
+  	http://templated.org/ | @templatedorg
+  	Released under the Creative Commons Attribution 3.0 License.
+  	
+  	Note from the author: These templates take quite a bit of time to conceive,
+  	design, and finally code. So please, support our efforts by respecting our
+  	license: keep our footer credit links intact so people can find out about us
+  	and what we do. It's the right thing to do, and we'll love you for it :)
+  	
+  -->
+  <html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+      <style>
+
+
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+
+
+
+  .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+
+.sentimentValue
+{
+  font-size: 15px;
+  padding-top: 20px;
+}
+
+
+.button {
+  color: #1c1c1c;
+  text-decoration: none;
+  margin-right: 10px;
+  
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  
+  -webkit-box-shadow: 0 1px 0px rgba(255,255,255,0.1) inset, 0 0px 1px rgba(0,0,0,0.7);
+  -moz-box-shadow: 0 1px 0px rgba(255,255,255,0.1) inset, 0 0px 1px rgba(0,0,0,0.7);
+  box-shadow: 0 1px 0px rgba(255,255,255,0.1) inset, 0 0px 1px rgba(255,255,255,0.1);
+  
+  background: rgba(255,255,255,0.6); /* #191919 */
+  border: 1px solid #141414;
+  padding: 10px 25px;
+}
+
+.tag {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+  
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  
+  -webkit-box-shadow: 0 -1px 0px rgba(255,255,255,0.1) inset;
+  -moz-box-shadow: 0 -1px 0px rgba(255,255,255,0.1) inset;
+  box-shadow: 0 -1px 0px rgba(255,255,255,0.1) inset;
+  
+  background: rgba(0,0,0,0.2); /* #161616 */
+  padding: 10px 25px;
+}
+.tag:hover {
+  background: rgba(0,0,0,0.4); /* #101010 */
+}
+  </style>
+
+
+ 
+      
+      <!--<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+      <script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>-->
+      
+ 
+
+      <script src="js/d3.v3.js"></script>
+
+      <!-- <script src="../amcharts/amcharts.js" type="text/javascript">$(document).ready(function () { cargarGrafica(); });</script>
+           <script src="../amcharts/serial.js" type="text/javascript">$(document).ready(function () { cargarGrafica(); });</script> -->
+
+
+
+<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/ >
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>  
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>  
+        <title>SOFIA</title>
+
+
+        <link href="http://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="base/jquery-ui.css" rel="stylesheet" />
+        <link href="base/jquery.ui.all.css" rel="stylesheet" />
+      </head>
+      <body>
+  		<div id="bg">
+  			<div id="outer">
+  				<div id="header">
+  					<div id="logo">
+  						<h1>
+  							<a href="#">SOFIA</a>
+  						</h1>
+  					</div>
+  					
+  					<div id="nav">
+  						<ul>
+  							<li class="first active">
+  								<a href="#">Inicio</a>
+  							</li>
+  							<li>
+  								<a href="datos.html">Fuentes de Datos</a>
+  							</li>
+  							
+  							<li>
+  								<a href="acerca.html">Acerca de</a>
+  							</li>
+  							
+  							
+  						</ul>
+  						<br class="clear" />
+  					</div>
+  				</div>
+  				
+          <div></div  height="372" >
+  				<div id="main">
+  					
+  					<div id="content">
+  						
+
+
+
+
+                                  <div class="row">
+                                    <div class="col-md-6" align="center">
+                                                  <h3>Seleccione Fecha de Inicio</h3>
+                                                  <input type="text" align="center" id="datetimepicker_start_time"/>
+                                            </div>
+                                    <div class="col-md-6" align="center">
+                                                 <h3>Seleccione Fecha de Fin</h3>
+                                                 <input type="text" id="datetimepicker_end_time"/>
+                                    </div>  
+                                   </div>
+                                    <div class="row">
+                                      <div class="col-md-12" align="center">
+                                            <p> &nbsp</p>
+                                              <a href="javascript:refrescar()" class="button">Mostrar Datos</a>
+                                            <p> &nbsp</p>
+                                            </div>
+                                      <div class="row">
+                                    </div>
+  							<p>
+
+
+
+<div id="results"></div>
+
+
+              <div class="list-group">
+                                <a class="list-group-item active" style="font-size: 15px;color:white"> Valores Actuales </a>
+                                <div id="placeholderHP"></div>
+
+                                
+                                
+                               <ul class="list-group">
+                               <a  class="list-group-item"><h4> <b>Intervalo Actual:</b></h4>   <div align="left" style="font-size: 18px;" id="dhora"></div><br></a>
+                               
+
+
+                                  <a  class="list-group-item"><h4> <b>Comportamiento Valor del mercado Vs. Valor Tendencia: </b></h4>   <div align="right" id="prediction">
+                                      <div class="row">
+
+                                         
+
+                                                <div class="col-md-12">
+                                                  <h3>
+                                                  
+                                                    
+                                                  </h3>
+
+                                                  <div id="divImagenComportamiento" style="width: 100%; height: 400px;"></div>
+                                                </div>
+
+                                               <div class="col-md-12">
+                                      <label id="divtendencia" class="sentimentValue">
+                                        
+                                      </label>
+                                      <label id="divtendencia2" class="sentimentValue " style="color:#7A7A7A">
+                                        
+                                      </label>
+                                    </div>  
+
+                                    </div>  
+                                  </div>
+
+
+
+                                   <a  class="list-group-item"><h4> <b>Tendencia comparativa: </b></h4>   <div align="right" id="dcomp">
+                                  <div class="row">
+                                    <div id="divComparativa" style="width: 100%; height: 400px;" class="col-md-8">
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label id="" class="sentimentValue">
+                                        
+                                      </label>
+                                      <label id="" class="sentimentValue " style="color:#7A7A7A">
+                                        
+                                      </label>
+                                    </div>  
+                                  </div>
+
+
+
+
+                               <a  class="list-group-item"><h4> <b>Indicador Sofia: </b></h4>   <div align="right" id="dsofia">
+                                  <div class="row">
+                                    <div id="divSOFIA" style="width: 100%; height: 400px;" class="col-md-8">
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label id="divSOFIASent" class="sentimentValue">
+                                        
+                                      </label>
+                                      <label id="divSOFIANum" class="sentimentValue " style="color:#7A7A7A">
+                                        
+                                      </label>
+                                    </div>  
+                                  </div>
+
+                                </div><br></a>
+                                <a  class="list-group-item"><h4><b>Sentimiento promedio Twitter Colombia: </b></h4> <div align="right" id="dtwittercol">
+                                  <div class="row">
+                                    <div id="divTwitterColombia"  style="width: 100%; height: 400px;"class="col-md-8">
+
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label id="divtwitterColombiaSent" class="sentimentValue">
+                                        
+                                     </label>
+                                      <label id="divtwitterColombiaNum"  class="sentimentValue " style="color:#7A7A7A">
+                                        
+                                      </label>
+                                    </div>  
+                                  </div>
+
+                                </div><br></a>
+                                 <a  class="list-group-item"><h4><b>Sentimiento promedio Twitter Estados Unidos:</b></h4>  <div align="right" id="dtwittereu">
+                                 <div class="row">
+                                    <div id="divTwitterEU" style="width: 100%; height: 400px;" class="col-md-8">
+
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label id="divTwitterEUSent"  class="sentimentValue">
+                                        
+                                      </label>
+                                      <label id="divTwitterEUNum"  class="sentimentValue " style="color:#7A7A7A">
+                                       
+                                      </label>
+                                    </div>  
+                                  </div></div><br></a>
+                                  <a  class="list-group-item"><h4><b>Sentimiento promedio Noticias en Colombia:</b></h4>  <div id="drsscol">
+                                    <div class="row">
+                                    <div id="divRssColombia" style="width: 100%; height: 400px;" class="col-md-8">
+
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label id="divRssColombiaSent"  class="sentimentValue">
+                                        
+                                      </label>
+                                      <label id="divRssColombiaNum"  class="sentimentValue " style="color:#7A7A7A">
+                                        
+                                      </label>
+                                    </div>  
+                                  </div>
+                                  </div><br></a>
+                                  <a  class="list-group-item"><h4><b>Sentimiento promedio Noticias En Estados Unidos:</b></h4>  <div id="drsseu">
+                                    <div class="row">
+                                    <div id="divRssEU" style="width: 100%; height: 400px;" class="col-md-8">
+
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label id="divRssEUSent"  class="sentimentValue">
+                                        
+                                      </label>
+                                      <label id="divRssEUNum"  class="sentimentValue " style="color:#7A7A7A">
+                                        
+                                      </label>
+                                    </div>  
+                                  </div>
+                                  </div><br></a>
+                                  <a  class="list-group-item"><h4><b>Sentimiento promedio De busquedas en Google: </b></h4> <div id="dgoogle">
+                                    <div class="row">
+                                    <div id="divgoogle" style="width: 100%; height: 400px;"class="col-md-8">
+                                    
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label id="divgoogleSent"  class="sentimentValue">
+                                        
+                                      </label>
+                                      <label id="divgoogleNum"  class="sentimentValue " style="color:#7A7A7A">
+                                       
+                                      </label>
+                                    </div>  
+                                  </div>
+                                  </div><br></a>
+
+                                 </ul>
+
+
+                            </div>
+
+  							</p>
+  						
+  						
+  							<p>
+                
+<style>
+
+body {   font: 10px sans-serif; }
+
+    .axis path,
+    .axis line 
+    {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+    .x.axis path { display: none;}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+    }
+
+</style>
+
+    
+          </p>
+            </div>
+              <br class="clear" />
+            </div>
+            <br class="clear" />
+          </div>
+        </div>
+        
+      </div>
+
+<div id="chartdiv" style="width: 100%; height: 400px;"></div>
+
+      </body>
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.datetimepicker.js"></script>
+
+
+<script src="../amcharts/amcharts.js" >
+
+</script>
+        <script src="../amcharts/serial.js" ></script>
+
+
+
+  <script type="text/javascript">
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                           ||
+//                                                        INICIO SCRIPTS                                                     ||
+//                                                                                                                           ||
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+rotulo = ""
+
+        var data=[];
+    var chart;
+           AmCharts.ready(function () {
+             
+
+               // SERIAL CHART
+               chart = new AmCharts.AmSerialChart();
+               chart.pathToImages = "../amcharts/images/";
+               chart.dataProvider = data;
+               chart.categoryField = "DATE";
+
+               // listen for "dataUpdated" event (fired when chart is inited) and call zoomChart method when it happens
+               chart.addListener("dataUpdated", zoomChart);
+
+               // AXES
+               // category
+               var categoryAxis = chart.categoryAxis;
+               categoryAxis.parseDates = true; // as our data is date-based, we set parseDates to true
+               categoryAxis.minPeriod = "mm"; // our data is daily, so we set minPeriod to DD
+               categoryAxis.minorGridEnabled = true;
+               categoryAxis.axisColor = "#DADADA";
+               categoryAxis.twoLineMode = true;
+               categoryAxis.dateFormats = [{
+                    period: 'fff',
+                    format: 'JJ:NN:SS'
+                }, {
+                    period: 'ss',
+                    format: 'JJ:NN:SS'
+                }, {
+                    period: 'mm',
+                    format: 'JJ:NN'
+                }, {
+                    period: 'hh',
+                    format: 'JJ:NN'
+                }, {
+                    period: 'DD',
+                    format: 'DD'
+                }, {
+                    period: 'WW',
+                    format: 'DD'
+                }, {
+                    period: 'MM',
+                    format: 'MMM'
+                }, {
+                    period: 'YYYY',
+                    format: 'YYYY'
+                }];
+
+               // first value axis (on the left)
+               var valueAxis1 = new AmCharts.ValueAxis();
+               valueAxis1.axisColor = "#FF6600";
+               valueAxis1.axisThickness = 2;
+               valueAxis1.gridAlpha = 0;
+               chart.addValueAxis(valueAxis1);
+
+               // second value axis (on the right)
+               var valueAxis2 = new AmCharts.ValueAxis();
+               valueAxis2.position = "right"; // this line makes the axis to appear on the right
+               valueAxis2.axisColor = "#FCD202";
+               valueAxis2.gridAlpha = 0;
+               valueAxis2.axisThickness = 2;
+               // chart.addValueAxis(valueAxis2);
+
+               // third value axis (on the left, detached)
+               valueAxis3 = new AmCharts.ValueAxis();
+               valueAxis3.offset = 50; // this line makes the axis to appear detached from plot area
+               valueAxis3.gridAlpha = 0;
+               valueAxis3.axisColor = "#B0DE09";
+               valueAxis3.axisThickness = 2;
+               // chart.addValueAxis(valueAxis3);
+
+               // GRAPHS
+               // first graph
+               var graph1 = new AmCharts.AmGraph();
+               graph1.valueAxis = valueAxis1; // we have to indicate which value axis should be used
+               graph1.title = "10 Minutes";
+               graph1.valueField = "10" + rotulo;
+               graph1.bullet = "round";
+               graph1.hideBulletsCount = 30;
+               graph1.bulletBorderThickness = 1;
+               chart.addGraph(graph1);
+
+               // second graph
+               var graph2 = new AmCharts.AmGraph();
+               graph2.valueAxis = valueAxis1; // we have to indicate which value axis should be used
+               graph2.title = "30 Minutes";
+               graph2.valueField = "30" + rotulo;
+               graph2.bullet = "square";
+               graph2.hideBulletsCount = 30;
+               graph2.bulletBorderThickness = 1;
+               chart.addGraph(graph2);
+
+               // third graph
+               var graph3 = new AmCharts.AmGraph();
+               graph3.valueAxis = valueAxis1; // we have to indicate which value axis should be used
+               graph3.title = "1 Hour";
+               graph3.valueField = "60" + rotulo;
+               graph3.bullet = "triangleUp";
+               graph3.hideBulletsCount = 30;
+               graph3.bulletBorderThickness = 1;
+               chart.addGraph(graph3);
+
+              // fourth graph
+               var graph4 = new AmCharts.AmGraph();
+               graph4.valueAxis = valueAxis1; // we have to indicate which value axis should be used
+               graph4.title = "2 Hours";
+               graph4.valueField = "2" + rotulo;
+               graph4.bullet = "triangleUp";
+               graph4.hideBulletsCount = 30;
+               graph4.bulletBorderThickness = 1;
+               chart.addGraph(graph4);
+
+               //   // fifth graph
+               // var graph5 = new AmCharts.AmGraph();
+               // graph5.valueAxis = valueAxis1; // we have to indicate which value axis should be used
+               // graph5.title = "24 Hours";
+               // graph5.valueField = "24" + rotulo;
+               // graph5.bullet = "triangleUp";
+               // graph5.hideBulletsCount = 30;
+               // graph5.bulletBorderThickness = 1;
+               // chart.addGraph(graph5);
+
+               // CURSOR
+               var chartCursor = new AmCharts.ChartCursor();
+               chartCursor.cursorAlpha = 0.1;
+               chartCursor.fullWidth = true;
+               chart.addChartCursor(chartCursor);
+
+               // SCROLLBAR
+               var chartScrollbar = new AmCharts.ChartScrollbar();
+               chart.addChartScrollbar(chartScrollbar);
+
+               // LEGEND
+               var legend = new AmCharts.AmLegend();
+               legend.marginLeft = 110;
+               legend.useGraphSettings = true;
+               chart.addLegend(legend);
+                 console.log("Cargó grafica prueba");
+               // WRITE
+               chart.write("divgoogle");
+
+              
+           });
+
+
+
+    // this method is called when chart is first inited as we listen for "dataUpdated" event
+           function zoomChart() 
+           {
+               // different zoom methods can be used - zoomToIndexes, zoomToDates, zoomToCategoryValues
+               chart.zoomToIndexes(10, 20);
+           }
+
+ $(document).ready(function () { cargarGraficas();});
+console.log("Cargo acmacharts");
+
+
+
+        </script>
+
+
+
+<script type="text/javascript">
+
+
+
+
+//REaliza la carga inicial del programa
+
+var fechaInicio //= Date.parse("2014-03-20T08:00:00.000Z");///
+  var fechaFin //= "2014-05-22T23:59:59.000Z";
+  totaValue = 0;//  2014-04-01T07:09:00.000Z
+var fechas = "";
+
+var totaValue = 0;
+ //carga las graficas de visualizacion
+
+
+var charts = [];
+
+
+function cargarGraficas()
+{ 
+  
+  totaValue = 0;
+
+      //fecha inicio: viene del DatePicker
+      if(fechaInicio==undefined)
+      {
+        fechaInicio = "08:00  2014-05-27";
+        fechaFin = "08:00  2014-05-30";
+      }
+        // var fechaInicio = new Date();
+         fechaA = fechaInicio.split("  ");
+
+         valorInicio = fechaA[1]  + "T" + fechaA[0] + ":00.000Z"
+
+           fechaB = fechaFin.split("  ");
+
+         valorFin = fechaB[1]  + "T" + fechaB[0] + ":00.000Z"
+
+         fechas = valorInicio + "/" + valorFin ;
+
+        console.log(fechas); 
+       // $( "datetimepicker_end_time" ).formatDate( 'dd-mm-yy', new Date(fechaInicio));
+
+
+         // fechas = fechaInicio.getDay()+ "/"  + '/';
+         // console.log(fechaInicio);
+
+
+
+      // $(document).ready(function () { 
+      //     grafica("/api/consultacampo.json/" + fechas + 'SENTIMENT' ,"divSOFIA", "Sentimiento");
+      //      });
+
+
+
+      //Se hace la carga inicial de las graficas vacias en la pagina
+
+           grafica('COPPREDICTED' ,"divImagenComportamiento");
+
+         grafica('SENTIMENT' ,"divSOFIA");
+           
+          grafica('TWITTERSPANISH' ,"divTwitterColombia");
+
+         grafica('TWITTERENGLISH' ,"divTwitterEU");
+
+          grafica('RSSSPANISH' ,"divRssColombia");
+
+          grafica('RSSENGLISH' ,"divRssEU");
+
+          grafica('GOOGLESENTIMENT' ,"divgoogle");
+
+          graficaComparativa();
+
+
+      /////
+
+
+//  carga la información en las gráficas
+
+          refrescar();
+
+
+        //////
+
+          textoDivSentimiento("/api/promedioSentimiento.json/" + fechas + '/SENTIMENT' ,"divSOFIASent");
+
+          textoDivSentimiento("/api/promedioSentimiento.json/" + fechas + '/TWITTERSPANISH' ,"divtwitterColombiaSent");
+
+          textoDivSentimiento("/api/promedioSentimiento.json/" + fechas + '/TWITTERENGLISH' ,"divTwitterEUSent");
+
+          textoDivSentimiento("/api/promedioSentimiento.json/" + fechas + '/RSSSPANISH' ,"divRssColombiaSent");
+
+          textoDivSentimiento("/api/promedioSentimiento.json/" + fechas + '/RSSENGLISH' ,"divRssEUSent");
+
+          textoDivSentimiento("/api/promedioSentimiento.json/" + fechas + '/GOOGLESENTIMENT' ,"divgoogleSent");
+       
+
+      /////
+
+      // $(document).ready(function () { 
+      //     numElementos("/api/contarTipo.json/" + fechas + 'TWEET' + '/' + 'SP' , "divtwitterColombiaNum");
+      //      });
+
+          numElementos("/api/contarTipo.json/" + fechas + '/TWEET' + '/' + 'SP' ,"divtwitterColombiaNum");
+
+          numElementos("/api/contarTipo.json/" + fechas + '/TWEET' + '/' + 'EN' ,"divTwitterEUNum");
+
+          numElementos("/api/contarTipo.json/" + fechas + '/RSS' + '/' + 'SP' ,"divRssColombiaNum");
+
+          numElementos("/api/contarTipo.json/" + fechas + '/RSS' + '/' + 'EN' ,"divRssEUNum");
+
+
+      }
+        
+
+/////
+ 
+
+</script>
+
+
+
+
+ <script type="text/javascript">
+function obtenerErrorPromedio(datos)
+{
+
+console.log("entro error promedio")
+  var copactual = 0;
+
+ var coppromedio = 0;
+  var err10 = 0;;
+  var err30 = 0;;
+  var err60 = 0;;
+  var err2 = 0;;
+console.log(datos[0]);
+console.log(datos[2]);
+  for (var i = datos.length - 1; i >= 0; i--) 
+  {
+    var temp = datos[i];
+    copactual = temp.COPACTUAL;
+    coppromedio = coppromedio +  copactual;
+    err10 =  err10 +  Math.abs(copactual - temp["10COPPREDICTED"]);
+    err30 =  err30 +  Math.abs(copactual - temp["30COPPREDICTED"]);
+    err60 =  err60 +  Math.abs(copactual - temp["60COPPREDICTED"]);
+    err2  =  err2  +  Math.abs(copactual - temp["2COPPREDICTED" ]);
+
+  };
+
+document.getElementById('divtendencia').innerHTML = "Error Promedio (en valores absolutos): 10 minutos: " + err10/datos.length.toFixed(6) + " | 30 minutos: " + err30/datos.length.toFixed(6) + " | 60 minutos: " +  err60/datos.length.toFixed(6) + " | 120 minutos: " +  err2/datos.length.toFixed(6); //actualiza el campo de la hora actualdivtendencia
+  
+ coppromedio = 0;
+   err10 = 0;;
+   err30 = 0;;
+   err60 = 0;;
+   err2 = 0;;
+
+  for (var i = datos.length - 1; i >= 0; i--) 
+  {
+    var temp = datos[i];
+    copactual = temp.COPACTUAL;
+    coppromedio = coppromedio +  copactual;
+    err10 =  err10 +  Math.abs(copactual - temp["10COPPREDICTED"])/copactual;
+    err30 =  err30 +  Math.abs(copactual - temp["30COPPREDICTED"])/copactual;
+    err60 =  err60 +  Math.abs(copactual - temp["60COPPREDICTED"])/copactual;
+    err2  =  err2  +  Math.abs(copactual - temp["2COPPREDICTED" ])/copactual;
+
+  };
+
+  document.getElementById('divtendencia2').innerHTML = "Error Promedio (en porcentajes): 10 minutos: " + (err10/datos.length*100).toFixed(6) + "% | 30 minutos: " + (err30/datos.length*100).toFixed(6) + "% | 60 minutos: " +  (err60/datos.length*100).toFixed(6) + "% | 120 minutos: " +  (err2/datos.length*100).toFixed(6) + "%"; //actualiza el campo de la hora actualdivtendencia
+  
+
+}
+ </script>
+
+
+<script type="text/javascript">
+  //actualiza todas las grafica scon la informacion de las fechas actuales
+function refrescar()
+{
+
+  //obtiene las fechas actuales
+
+     //fecha inicio: viene del DatePicker
+      if(fechaInicio==undefined)
+      {
+        fechaInicio = "08:00  2014-05-01";
+        fechaFin = "08:00  2014-05-12";
+      }
+        // var fechaInicio = new Date();
+         fechaA = fechaInicio.split("  ");
+
+         valorInicio = fechaA[1]  + "T" + fechaA[0] + ":00.000Z"
+
+           fechaB = fechaFin.split("  ");
+
+         valorFin = fechaB[1]  + "T" + fechaB[0] + ":00.000Z"
+
+         fechas = valorInicio + "/" + valorFin ;
+
+        document.getElementById('dhora').innerHTML = 'desde las ' + fechaA[0] + ' del ' + fechaA[1] + ' hasta las ' + fechaB[0] + ' del ' + fechaB[1]; //actualiza el campo de la hora actual
+         
+//hace el llamado ajax para cargar la informacion
+
+var chartData = [];
+
+ $.ajax(
+        {
+            url: "/api/detailedResults.json/" + fechas, //URL to load
+            type: 'GET', //Type of Ajax call
+            dataType: 'html', //Type of data to be expected on return
+            success: function(data) 
+            { //Function that manipulates the returned AJAX'ed data
+          
+                  var parsed = JSON.parse(data);
+                  console.log("AJAX cargarInfoSentimientos");
+                  console.log("/api/detailedResults.json/" + fechas);
+
+                  for(var x in parsed)
+                  {
+                    chartData.push(parsed[x]);
+                  }
+
+                  for (var i = 1; i < charts.length; i++) //la primera grafica es la del valor predicho, cuyo valor viene de otra coleccion
+                  {
+                    charts[i].dataProvider = chartData;
+                     charts[i].validateData();  
+                  };
+
+           }
+
+      });
+                
+
+// un Ajax diferente para la coleccion de resultados de predicciones
+var chartData2 = [];
+  $.ajax(
+        {
+            url: "/api/results.json/" + fechas, //URL to load
+            type: 'GET', //Type of Ajax call
+            dataType: 'html', //Type of data to be expected on return
+            success: function(data) 
+            { //Function that manipulates the returned AJAX'ed data
+          
+                  
+                  console.log("AJAX cargarInfoPredicciones");
+
+                  console.log("/api/results.json/" + fechas);
+
+                  var parsed = JSON.parse(data);
+                  for(var x in parsed)
+                  {
+                    chartData2.push(parsed[x]);
+                  }
+
+                  obtenerErrorPromedio(chartData2 );
+
+                    charts[0].dataProvider = chartData2;
+                     charts[0].validateData();  
+
+                     
+                  
+
+           }
+
+      });
+  
+
+}
+</script>
+
+
+
+<script type="text/javascript">
+ 
+$('#datetimepicker_start_time').datetimepicker({
+  value:'08:00  2014-05-27',
+ 
+
+  minDate:'2014/04/01',
+   maxDate:'+1970/01/01',
+   format:'H:i  Y-m-d',
+  // minTime:'08:00',
+  //  maxTime:'13:00',
+  // allowTimes:[  '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', ':14:00' ],
+  lang : 'es',
+  onChangeDateTime:function(dp,$input){
+    fechaInicio = $input.val();
+  }
+
+
+});
+
+</script> 
+<script type="text/javascript">
+  
+$('#datetimepicker_end_time').datetimepicker({
+  value:'14:00  2014-05-27',
+   minDate:'2014/04/01',//yesterday is minimum date(for today use 0 or -1970/01/01)
+ maxDate:'+1970/01/01',//today is maximum date calendar
+ format:'H:i  Y-m-d',
+ // allowTimes:[  '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', ':14:00' ],
+  lang : 'es',
+  onChangeDateTime:function(dp,$input){
+    fechaFin = $input.val();
+  }
+});
+
+</script> 
+
+
+  <script> 
+
+function numElementos(jsonDir, target)
+  { 
+     //settea el numero de elementos en las fuentes
+        $(function(){
+            ajax();
+        })
+
+        //Function that makes Ajax call out to receive search results
+        var ajax = function() {
+            //Setup Ajax
+            $.ajax({
+                url: jsonDir, //URL to load
+                type: 'GET', //Type of Ajax call
+                dataType: 'html', //Type of data to be expected on return
+                success: function(data) { //Function that manipulates the returned AJAX'ed data
+                  console.log(target + " : " + data);
+                    document.getElementById(target).innerHTML = '[' + data + ' items ]'; //Load the data into a HTML holder
+                    totaValue += parseFloat(data);
+                    document.getElementById('divSOFIANum').innerHTML = '    [' + totaValue + ' items ]'; //actualiza el campo en Sofia
+
+                    var $el = $('#results'); //jQuery Object that is holding the results
+                }
+            });
+        }
+
+       
+        
+  }
+
+ </script>
+
+
+  <script> 
+//settea el sentimiento de las fuentes
+function textoDivSentimiento(jsonDir, target)
+  { 
+     // console.log("Carga sentimiento promedio :" + jsonDir);     
+      d3.json(jsonDir, function(error, json) 
+      {
+      if (error) return console.warn(error);
+      
+      json.forEach(function(d) 
+      {    
+        var num = parseFloat(d.PROM);  
+
+        document.getElementById(target).innerHTML = "Sentimiento promedio: " + num.toFixed(3);
+     
+      });
+     
+  });
+  }
+
+ </script>
+
+ 
+
+  <script> 
+  
+function grafica(rotulo, target)
+{
+
+var data=[];
+    var chart;
+           AmCharts.ready(function () {
+             
+
+               // SERIAL CHART
+               chart = new AmCharts.AmSerialChart();
+               chart.pathToImages = "../amcharts/images/";
+               chart.dataProvider = data;
+               chart.categoryField = "DATE";
+
+               // listen for "dataUpdated" event (fired when chart is inited) and call zoomChart method when it happens
+               chart.addListener("dataUpdated", zoomChart);
+
+               // AXES
+               // category
+               var categoryAxis = chart.categoryAxis;
+               categoryAxis.parseDates = true; // as our data is date-based, we set parseDates to true
+               categoryAxis.minPeriod = "mm"; // our data is daily, so we set minPeriod to DD
+               categoryAxis.minorGridEnabled = true;
+               categoryAxis.axisColor = "#DADADA";
+               categoryAxis.twoLineMode = true;
+               categoryAxis.dateFormats = [{
+                    period: 'fff',
+                    format: 'JJ:NN:SS'
+                }, {
+                    period: 'ss',
+                    format: 'JJ:NN:SS'
+                }, {
+                    period: 'mm',
+                    format: 'JJ:NN'
+                }, {
+                    period: 'hh',
+                    format: 'JJ:NN'
+                }, {
+                    period: 'DD',
+                    format: 'DD'
+                }, {
+                    period: 'WW',
+                    format: 'DD'
+                }, {
+                    period: 'MM',
+                    format: 'MMM'
+                }, {
+                    period: 'YYYY',
+                    format: 'YYYY'
+                }];
+
+               // first value axis (on the left)
+               var valueAxis1 = new AmCharts.ValueAxis();
+               valueAxis1.axisColor = "#FF6600";
+               valueAxis1.axisThickness = 2;
+               valueAxis1.gridAlpha = 0;
+               valueAxis1.title = "Sentimiento";
+               chart.addValueAxis(valueAxis1);
+
+               // second value axis (on the right)
+               var valueAxis2 = new AmCharts.ValueAxis();
+               valueAxis2.position = "right"; // this line makes the axis to appear on the right
+               valueAxis2.axisColor = "#FCD202";
+               valueAxis2.gridAlpha = 0;
+               valueAxis2.axisThickness = 2;
+               // chart.addValueAxis(valueAxis2);
+
+               // third value axis (on the left, detached)
+               valueAxis3 = new AmCharts.ValueAxis();
+               valueAxis3.offset = 50; // this line makes the axis to appear detached from plot area
+               valueAxis3.gridAlpha = 0;
+               valueAxis3.axisColor = "#B0DE09";
+               valueAxis3.axisThickness = 2;
+               // chart.addValueAxis(valueAxis3);
+
+               // GRAPHS
+               // first graph
+               var graph1 = new AmCharts.AmGraph();
+               graph1.valueAxis = valueAxis1; // we have to indicate which value axis should be used
+               graph1.title = "10 Minutos";
+               graph1.valueField = "10" + rotulo;
+               graph1.bullet = "round";
+               graph1.hideBulletsCount = 30;
+               graph1.bulletBorderThickness = 1;
+               chart.addGraph(graph1);
+
+               // second graph
+               var graph2 = new AmCharts.AmGraph();
+               graph2.valueAxis = valueAxis1; // we have to indicate which value axis should be used
+               graph2.title = "30 Minutos";
+               graph2.valueField = "30" + rotulo;
+               graph2.bullet = "square";
+               graph2.hideBulletsCount = 30;
+               graph2.bulletBorderThickness = 1;
+               chart.addGraph(graph2);
+
+               // third graph
+               var graph3 = new AmCharts.AmGraph();
+               graph3.valueAxis = valueAxis1; // we have to indicate which value axis should be used
+               graph3.title = "1 Hora";
+               graph3.valueField = "60" + rotulo;
+               graph3.bullet = "triangleUp";
+               graph3.hideBulletsCount = 30;
+               graph3.bulletBorderThickness = 1;
+               chart.addGraph(graph3);
+
+              // fourth graph
+               var graph4 = new AmCharts.AmGraph();
+               graph4.valueAxis = valueAxis1; // we have to indicate which value axis should be used
+               graph4.title = "2 Horas";
+               graph4.valueField = "2" + rotulo;
+               graph4.bullet = "triangleUp";
+               graph4.hideBulletsCount = 30;
+               graph4.bulletBorderThickness = 1;
+               chart.addGraph(graph4);
+
+                 // fifth graph
+               // var graph5 = new AmCharts.AmGraph();
+               // graph5.valueAxis = valueAxis1; // we have to indicate which value axis should be used
+               // graph5.title = "24 Horas";
+               // graph5.valueField = "24" + rotulo;
+               // graph5.bullet = "triangleUp";
+               // graph5.hideBulletsCount = 30;
+               // graph5.bulletBorderThickness = 1;
+               // chart.addGraph(graph5);
+
+               if(rotulo == "COPPREDICTED") //para esta grafica se necesita una linea adicional, la del valor real del peso
+               {
+                    var graph6 = new AmCharts.AmGraph();
+                   graph6.valueAxis = valueAxis1; // we have to indicate which value axis should be used
+                   graph6.title = "Valor Actual COP/USD";
+                   graph6.valueField = "COPACTUAL";
+                   graph6.bullet = "round";
+                   graph6.hideBulletsCount = 30;
+                   graph6.bulletBorderThickness = 1;
+                   chart.addGraph(graph6);
+
+                   valueAxis1.title = "Pesos por dolar (COP/USD)";
+               }
+
+               // CURSOR
+               var chartCursor = new AmCharts.ChartCursor();
+               chartCursor.cursorAlpha = 0.1;
+               chartCursor.fullWidth = true;
+               chart.addChartCursor(chartCursor);
+
+               // SCROLLBAR
+               var chartScrollbar = new AmCharts.ChartScrollbar();
+               chart.addChartScrollbar(chartScrollbar);
+
+               // LEGEND
+               var legend = new AmCharts.AmLegend();
+               legend.marginLeft = 110;
+               legend.useGraphSettings = true;
+               legend.spacing = 20;
+               legend.valueWidth = 100;
+
+               chart.addLegend(legend);
+                 console.log("Cargó grafica Inicial");
+               // WRITE
+               chart.write(target);
+               charts.push(chart);
+              
+           });
+
+
+
+    // this method is called when chart is first inited as we listen for "dataUpdated" event
+           function zoomChart() 
+           {
+               // different zoom methods can be used - zoomToIndexes, zoomToDates, zoomToCategoryValues
+               // chart.zoomToIndexes(10, 20);
+
+           }
+
+           return chart;
+      
+  }
+
+</script>
+
+
+
+
+  <script> 
+  
+function graficaComparativa()
+{
+rotulo = "SENTIMENT"
+var data=[];
+    var chart;
+           AmCharts.ready(function () {
+             
+
+               // SERIAL CHART
+               chart = new AmCharts.AmSerialChart();
+               chart.pathToImages = "../amcharts/images/";
+               chart.dataProvider = data;
+               chart.categoryField = "DATE";
+
+               // listen for "dataUpdated" event (fired when chart is inited) and call zoomChart method when it happens
+               chart.addListener("dataUpdated", zoomChart);
+
+               // AXES
+               // category
+               var categoryAxis = chart.categoryAxis;
+               categoryAxis.parseDates = true; // as our data is date-based, we set parseDates to true
+               categoryAxis.minPeriod = "mm"; // our data is daily, so we set minPeriod to DD
+               categoryAxis.minorGridEnabled = true;
+               categoryAxis.axisColor = "#DADADA";
+               categoryAxis.twoLineMode = true;
+               categoryAxis.dateFormats = [{
+                    period: 'fff',
+                    format: 'JJ:NN:SS'
+                }, {
+                    period: 'ss',
+                    format: 'JJ:NN:SS'
+                }, {
+                    period: 'mm',
+                    format: 'JJ:NN'
+                }, {
+                    period: 'hh',
+                    format: 'JJ:NN'
+                }, {
+                    period: 'DD',
+                    format: 'DD'
+                }, {
+                    period: 'WW',
+                    format: 'DD'
+                }, {
+                    period: 'MM',
+                    format: 'MMM'
+                }, {
+                    period: 'YYYY',
+                    format: 'YYYY'
+                }];
+
+               // first value axis (on the left)
+               var valueAxis1 = new AmCharts.ValueAxis();
+               valueAxis1.axisColor = "#FF6600";
+               valueAxis1.axisThickness = 2;
+               valueAxis1.gridAlpha = 0;
+               valueAxis1.title = "Sentimiento";
+               chart.addValueAxis(valueAxis1);
+
+               // second value axis (on the right)
+               var valueAxis2 = new AmCharts.ValueAxis();
+               valueAxis2.position = "right"; // this line makes the axis to appear on the right
+               valueAxis2.axisColor = "#FCD202";
+               valueAxis2.gridAlpha = 0;
+               valueAxis2.axisThickness = 2;
+               valueAxis2.title = "Pesos por dolar (COP/USD)";
+               chart.addValueAxis(valueAxis2);
+
+               // third value axis (on the left, detached)
+               valueAxis3 = new AmCharts.ValueAxis();
+               valueAxis3.offset = 50; // this line makes the axis to appear detached from plot area
+               valueAxis3.gridAlpha = 0;
+               valueAxis3.axisColor = "#B0DE09";
+               valueAxis3.axisThickness = 2;
+               // chart.addValueAxis(valueAxis3);
+
+               // GRAPHS
+               // first graph
+               var graph1 = new AmCharts.AmGraph();
+               graph1.valueAxis = valueAxis1; // we have to indicate which value axis should be used
+               graph1.title = "10 Minutos";
+               graph1.valueField = "10" + rotulo;
+               graph1.bullet = "round";
+               graph1.hideBulletsCount = 30;
+               graph1.bulletBorderThickness = 1;
+               chart.addGraph(graph1);
+
+               // second graph
+               var graph2 = new AmCharts.AmGraph();
+               graph2.valueAxis = valueAxis1; // we have to indicate which value axis should be used
+               graph2.title = "30 Minutos";
+               graph2.valueField = "30" + rotulo;
+               graph2.bullet = "square";
+               graph2.hideBulletsCount = 30;
+               graph2.bulletBorderThickness = 1;
+               chart.addGraph(graph2);
+
+               // third graph
+               var graph3 = new AmCharts.AmGraph();
+               graph3.valueAxis = valueAxis1; // we have to indicate which value axis should be used
+               graph3.title = "1 Hora";
+               graph3.valueField = "60" + rotulo;
+               graph3.bullet = "triangleUp";
+               graph3.hideBulletsCount = 30;
+               graph3.bulletBorderThickness = 1;
+               chart.addGraph(graph3);
+
+              // fourth graph
+               var graph4 = new AmCharts.AmGraph();
+               graph4.valueAxis = valueAxis1; // we have to indicate which value axis should be used
+               graph4.title = "2 Horas";
+               graph4.valueField = "2" + rotulo;
+               graph4.bullet = "triangleUp";
+               graph4.hideBulletsCount = 30;
+               graph4.bulletBorderThickness = 1;
+               chart.addGraph(graph4);
+
+                 // fifth graph
+               // var graph5 = new AmCharts.AmGraph();
+               // graph5.valueAxis = valueAxis1; // we have to indicate which value axis should be used
+               // graph5.title = "24 Horas";
+               // graph5.valueField = "24" + rotulo;
+               // graph5.bullet = "triangleUp";
+               // graph5.hideBulletsCount = 30;
+               // graph5.bulletBorderThickness = 1;
+               // chart.addGraph(graph5);
+
+               
+                var graph6 = new AmCharts.AmGraph();
+               graph6.valueAxis = valueAxis2; // we have to indicate which value axis should be used
+               graph6.title = "Valor Actual COP/USD";
+               graph6.valueField = "COPACTUAL";
+               graph6.bullet = "round";
+               graph6.hideBulletsCount = 30;
+               graph6.bulletBorderThickness = 1;
+               chart.addGraph(graph6);
+
+               // CURSOR
+               var chartCursor = new AmCharts.ChartCursor();
+               chartCursor.cursorAlpha = 0.1;
+               chartCursor.fullWidth = true;
+               chart.addChartCursor(chartCursor);
+
+               // SCROLLBAR
+               var chartScrollbar = new AmCharts.ChartScrollbar();
+               chart.addChartScrollbar(chartScrollbar);
+
+               // LEGEND
+               var legend = new AmCharts.AmLegend();
+               legend.marginLeft = 110;
+               legend.useGraphSettings = true;
+               legend.spacing = 20;
+               legend.valueWidth = 100;
+
+               chart.addLegend(legend);
+               // WRITE
+               chart.write("divComparativa");
+               charts.push(chart);
+              
+           });
+
+
+
+    // this method is called when chart is first inited as we listen for "dataUpdated" event
+           function zoomChart() 
+           {
+               // different zoom methods can be used - zoomToIndexes, zoomToDates, zoomToCategoryValues
+               // chart.zoomToIndexes(10, 20);
+
+           }
+
+           return chart;
+      
+  }
+
+</script>
+
+
+ </html>

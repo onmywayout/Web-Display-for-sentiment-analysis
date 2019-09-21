@@ -1,0 +1,481 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  <!--
+
+  	Serious Face by nodethirtythree + Templated.org
+  	http://templated.org/ | @templatedorg
+  	Released under the Creative Commons Attribution 3.0 License.
+  	
+  	Note from the author: These templates take quite a bit of time to conceive,
+  	design, and finally code. So please, support our efforts by respecting our
+  	license: keep our footer credit links intact so people can find out about us
+  	and what we do. It's the right thing to do, and we'll love you for it :)
+  	
+  -->
+  <html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+      <style>
+
+
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+
+
+
+  .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+
+.sentimentValue
+{
+  font-size: 15px;
+  padding-top: 20px;
+}
+
+
+.button {
+  color: #1c1c1c;
+  text-decoration: none;
+  margin-right: 10px;
+  
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  
+  -webkit-box-shadow: 0 1px 0px rgba(255,255,255,0.1) inset, 0 0px 1px rgba(0,0,0,0.7);
+  -moz-box-shadow: 0 1px 0px rgba(255,255,255,0.1) inset, 0 0px 1px rgba(0,0,0,0.7);
+  box-shadow: 0 1px 0px rgba(255,255,255,0.1) inset, 0 0px 1px rgba(255,255,255,0.1);
+  
+  background: rgba(255,255,255,0.6); /* #191919 */
+  border: 1px solid #141414;
+  padding: 10px 25px;
+}
+
+.tag {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+  
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  
+  -webkit-box-shadow: 0 -1px 0px rgba(255,255,255,0.1) inset;
+  -moz-box-shadow: 0 -1px 0px rgba(255,255,255,0.1) inset;
+  box-shadow: 0 -1px 0px rgba(255,255,255,0.1) inset;
+  
+  background: rgba(0,0,0,0.2); /* #161616 */
+  padding: 10px 25px;
+}
+.tag:hover {
+  background: rgba(0,0,0,0.4); /* #101010 */
+}
+
+.list-group-item
+{
+  color : white ;
+  font-size: 15px;
+  text-align: center;
+}
+  </style>
+
+
+ 
+      
+      <!--<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+      <script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>-->
+      
+ 
+
+      <script src="js/d3.v3.js"></script>
+
+      <!-- <script src="../amcharts/amcharts.js" type="text/javascript">$(document).ready(function () { cargarGrafica(); });</script>
+           <script src="../amcharts/serial.js" type="text/javascript">$(document).ready(function () { cargarGrafica(); });</script> -->
+
+
+
+<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/ >
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>  
+        <meta http-equiv="Content-Script-Type" content="text/javascript"/>  
+        <title>SOFIA</title>
+
+
+        <link href="http://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="base/jquery-ui.css" rel="stylesheet" />
+        <link href="base/jquery.ui.all.css" rel="stylesheet" />
+      </head>
+      <body>
+  		<div id="bg">
+  			<div id="outer">
+  				<div id="header">
+  					<div id="logo">
+  						<h1>
+  							<a href="#">SOFIA</a>
+  						</h1>
+  					</div>
+  					
+  					<div id="nav">
+  						<ul>
+  							<li >
+  								<a href="index.html">Inicio</a>
+  							</li>
+  							<li class="first active">
+  								<a href="#">Fuentes de Datos</a>
+  							</li>
+  							
+  							<li>
+  								<a href="acerca.html">Acerca de</a>
+  							</li>
+  							
+  							
+  						</ul>
+  						<br class="clear" />
+  					</div>
+  				</div>
+  				
+          <div></div  height="372" >
+  				<div id="main">
+  					
+  					<div id="content">
+  						
+
+<div class="row">
+                                    <div class="col-md-6" align="center">
+                                                  <h3>Seleccione Fecha de Inicio</h3>
+                                                  <input type="text" align="center" id="datetimepicker_start_time"/>
+                                            </div>
+                                    <div class="col-md-6" align="center">
+                                                 <h3>Seleccione Fecha de Fin</h3>
+                                                 <input type="text" id="datetimepicker_end_time"/>
+                                    </div>  
+                                   </div>
+                                    <div class="row">
+                                      <div class="col-md-12" align="center">
+                                            <p> &nbsp</p>
+                                              <a href="javascript:refrescar()" class="button">Mostrar Datos</a>
+                                            <p> &nbsp</p>
+                                            </div>
+                                      <div class="row">
+                                    </div>
+
+            <div class = "row">
+ <p>
+                              
+                          </p>
+            </div>
+
+                 <div class="row clearfix"> 
+                
+                        <div class="col-md-3 column">
+                         
+                          <div class="list-group">
+                              <a class="list-group-item active"  style="color : white ;";>
+                               Tweets de Colombia
+                                  </a>
+                              <div id="tweetsCol"></div>
+                          </div>
+                          
+                         </div>
+                         
+                          <div class="col-md-3 column">
+                          <div class="list-group">
+                              <a class="list-group-item active" style="color : white ;" style="color : white ;">
+                                Tweets de Estados Unidos
+                                  </a>
+                              <div id="tweetsEU"></div>
+                           </div>
+                          </div>
+                         
+                           <div class="col-md-3 column">
+
+                          <div class="list-group">
+                              <a class="list-group-item active" style="color : white ;">
+                               Noticias de Colombia
+                                  </a>
+                              <div id="rssCol"></div>
+                            </div>
+                          </div>
+
+                              <div class="col-md-3 column">
+                          <div class="list-group">
+                              <a class="list-group-item active" style="color : white ;">
+                                Noticias de Estados Unidos
+                                  </a>
+                              <div id="rssEU"></div>
+                           </div>
+                          </div>
+                          
+                          <!--<div id="chart"></div>
+                          <div id="pieCombinado"></div>-->
+                      </div>
+         
+<style>
+
+body {   font: 10px sans-serif; }
+
+    .axis path,
+    .axis line 
+    {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+    .x.axis path { display: none;}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+    }
+
+</style>
+
+         
+          </p>
+            </div>
+              <br class="clear" />
+            </div>
+            <br class="clear" />
+          </div>
+        </div>
+        
+      </div>
+
+<div id="chartdiv" style="width: 100%; height: 400px;"></div>
+
+      </body>
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.datetimepicker.js"></script>
+
+
+
+
+
+  <script type="text/javascript">
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                           ||
+//                                                        INICIO SCRIPTS                                                     ||
+//                                                                                                                           ||
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+ $(document).ready(function () { cargarDatosInicio();});
+console.log("Cargo acmacharts");
+
+
+
+        </script>
+
+
+
+<script type="text/javascript">
+
+//REaliza la carga inicial del programa
+
+var fechaInicio //= Date.parse("2014-03-20T08:00:00.000Z");///
+var fechaFin //= "2014-05-22T23:59:59.000Z";
+var fechas = "";
+
+
+
+function cargarDatosInicio()
+{ 
+  
+      //fecha inicio: viene del DatePicker
+      if(fechaInicio==undefined)
+      {
+        fechaInicio = "08:00  2014-06-06";
+        fechaFin = "08:15  2014-06-06";
+      }
+        // var fechaInicio = new Date();
+        fechaA = fechaInicio.split("  ");
+        valorInicio = fechaA[1]  + "T" + fechaA[0] + ":00.000Z"
+        fechaB = fechaFin.split("  ");
+        valorFin = fechaB[1]  + "T" + fechaB[0] + ":00.000Z"
+        fechas = valorInicio + "/" + valorFin ;
+
+    
+      refrescar();
+     
+}
+        
+</script>
+
+
+<script type="text/javascript">
+
+function refrescar()
+{
+
+  fechaA = fechaInicio.split("  ");
+  valorInicio = fechaA[1]  + "T" + fechaA[0] + ":00.000Z"
+  fechaB = fechaFin.split("  ");
+  valorFin = fechaB[1]  + "T" + fechaB[0] + ":00.000Z"
+  fechas = valorInicio + "/" + valorFin ;
+
+  actualizarContenedor("/api/" + "spanishtweets"  + ".json/" + fechas, "tweetsCol");
+  actualizarContenedor("/api/" + "englishtweets" + ".json/" + fechas, "tweetsEU");
+  actualizarContenedor("/api/" + "spanishrss" + ".json/" + fechas, "rssCol");
+  actualizarContenedor("/api/" + "englishrss" + ".json/" + fechas, "rssEU");
+}
+
+</script>
+
+
+
+<script type="text/javascript">
+
+  function actualizarContenedor(jsondir, target)
+  {
+     var output='<ul class="list-group">';
+      console.log(jsondir)
+      d3.json(jsondir, function(error, json) 
+      {
+        if (error) return console.warn(error);
+
+       
+        json.forEach(function(d) 
+        {      
+          output+= '<a title:"' + d.SENTIMENT + '"" class="list-group-item">' + d.TEXT +   '</a>';
+        });          
+
+
+      output+="</ul>";
+
+      document.getElementById(target).innerHTML=output;
+      });
+
+  }
+
+
+
+  
+
+
+</script>
+
+
+
+
+<script type="text/javascript">
+ 
+$('#datetimepicker_start_time').datetimepicker({
+  value:'08:00  2014-05-29',
+ 
+
+  minDate:'2014/04/01',
+   maxDate:'+1970/01/01',
+   format:'H:i  Y-m-d',
+  // minTime:'08:00',
+  //  maxTime:'13:00',
+  // allowTimes:[  '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', ':14:00' ],
+  lang : 'es',
+  onChangeDateTime:function(dp,$input){
+    fechaInicio = $input.val();
+  }
+
+
+});
+
+</script> 
+<script type="text/javascript">
+  
+$('#datetimepicker_end_time').datetimepicker({
+  value:'08:15  2014-29-05',
+   minDate:'2014/04/01',//yesterday is minimum date(for today use 0 or -1970/01/01)
+ maxDate:'+1970/01/01',//today is maximum date calendar
+ format:'H:i  Y-m-d',
+ // allowTimes:[  '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', ':14:00' ],
+  lang : 'es',
+  onChangeDateTime:function(dp,$input){
+    fechaFin = $input.val();
+  }
+});
+
+</script> 
+
+
+  <script> 
+
+function numElementos(jsonDir, target)
+  { 
+     //settea el numero de elementos en las fuentes
+        $(function(){
+            ajax();
+        })
+
+        //Function that makes Ajax call out to receive search results
+        var ajax = function() {
+            //Setup Ajax
+            $.ajax({
+                url: jsonDir, //URL to load
+                type: 'GET', //Type of Ajax call
+                dataType: 'html', //Type of data to be expected on return
+                success: function(data) { //Function that manipulates the returned AJAX'ed data
+                  console.log(target + " : " + data);
+                    document.getElementById(target).innerHTML = '[' + data + ' items ]'; //Load the data into a HTML holder
+                    totaValue += parseFloat(data);
+                    document.getElementById('divSOFIANum').innerHTML = '    [' + totaValue + ' items ]'; //actualiza el campo en Sofia
+
+                    var $el = $('#results'); //jQuery Object that is holding the results
+                }
+            });
+        }
+
+       
+        
+  }
+
+ </script>
+
+
+  <script> 
+//settea el sentimiento de las fuentes
+function textoDivSentimiento(jsonDir, target)
+  { 
+     // console.log("Carga sentimiento promedio :" + jsonDir);     
+      d3.json(jsonDir, function(error, json) 
+      {
+      if (error) return console.warn(error);
+      
+      json.forEach(function(d) 
+      {    
+        var num = parseFloat(d.PROM);  
+
+        document.getElementById(target).innerHTML = "Sentimiento promedio: " + num.toFixed(3);
+     
+      });
+     
+  });
+  }
+
+ </script>
+
+ 
+
+
+
+
+ </html>
