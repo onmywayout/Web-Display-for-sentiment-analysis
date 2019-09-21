@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><b:Sources SelectedStyle="\IEEE2006OfficeOnline.xsl" StyleName="IEEE" Version="2006" xmlns:b="http://schemas.openxmlformats.org/officeDocument/2006/bibliography" xmlns="http://schemas.openxmlformats.org/officeDocument/2006/bibliography">
+	<b:Source>
+		<b:SourceType>JournalArticle</b:SourceType>
+		<b:Tag>2012arXiv1212.1037R</b:Tag>
+		<b:Title>{Modeling Movements in Oil, Gold, Forex and Market Indices using Search Volume Index and Twitter Sentiments}</b:Title>
+		<b:Year>2012</b:Year>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Rao</b:Last>
+						<b:First>T.</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Srivastava</b:Last>
+						<b:First>S.</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:JournalName>ArXiv e-prints</b:JournalName>
+		<b:Month>#dec#</b:Month>
+		<b:BIBTEX_Abstract>Study of the forecasting models using large scale microblog discussions and the search behavior data can provide a good insight for better understanding the market movements. In this work we collected a dataset of 2 million tweets and search volume index (SVI from Google) for a period of June 2010 to September 2011. We perform a study over a set of comprehensive causative relationships and developed a unified approach to a model for various market securities like equity (Dow Jones Industrial Average-DJIA and NASDAQ-100), commodity markets (oil and gold) and Euro Forex rates. We also investigate the lagged and statistically causative relations of Twitter sentiments developed during active trading days and market inactive days in combination with the search behavior of public before any change in the prices/ indices. Our results show extent of lagged significance with high correlation value upto 0.82 between search volumes and gold price in USD. We find weekly accuracy in direction (up and down prediction) uptil 94.3% for DJIA and 90% for NASDAQ-100 with significant reduction in mean average percentage error for all the forecasting models.</b:BIBTEX_Abstract>
+		<b:BIBTEX_KeyWords>Computer Science - Computational Engineering, Finance, and Science, Computer Science - Social and Information Networks, Quantitative Finance - General Finance</b:BIBTEX_KeyWords>
+		<b:RefOrder>5</b:RefOrder></b:Source>
+	<b:Source>
+		<b:SourceType>Report</b:SourceType>
+		<b:BIBTEX_Entry>techreport</b:BIBTEX_Entry>
+		<b:Tag>Monetary2013</b:Tag>
+		<b:Title>Triennial
+Central Bank Survey 
+Foreign exchange 
+turnover in April 2013: 
+preliminary global 
+results</b:Title>
+		<b:Year>2013</b:Year>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Monetary</b:Last>
+					</b:Person>
+					<b:Person>
+						<b:Last>Department</b:Last>
+						<b:First>Economic</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:Institution>Bank For International Settlements</b:Institution>
+		<b:ThesisType>Tech. rep.</b:ThesisType>
+		<b:BIBTEX_Abstract>Triennial
+Central Bank Survey 
+Foreign exchange 
+turnover in April 2013: 
+preliminary global 
+results</b:BIBTEX_Abstract>
+		<b:RefOrder>7</b:RefOrder></b:Source>
+	<b:Source>
+		<b:SourceType>JournalArticle</b:SourceType>
+		<b:Tag>2011arXiv1112.1051M</b:Tag>
+		<b:Title>{Predicting Financial Markets: Comparing Survey, News, Twitter and Search Engine Data}</b:Title>
+		<b:Year>2011</b:Year>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Mao</b:Last>
+						<b:First>H.</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Counts</b:Last>
+						<b:First>S.</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Bollen</b:Last>
+						<b:First>J.</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:JournalName>ArXiv e-prints</b:JournalName>
+		<b:Month>#dec#</b:Month>
+		<b:BIBTEX_Abstract>Financial market prediction on the basis of online sentiment tracking has drawn a lot of attention recently. However, most results in this emerging domain rely on a unique, particular combination of data sets and sentiment tracking tools. This makes it difficult to disambiguate measurement and instrument effects from factors that are actually involved in the apparent relation between online sentiment and market values. In this paper, we survey a range of online data sets (Twitter feeds, news headlines, and volumes of Google search queries) and sentiment tracking methods (Twitter Investor Sentiment, Negative News Sentiment and Tweet &amp; Google Search volumes of financial terms), and compare their value for financial prediction of market indices such as the Dow Jones Industrial Average, trading volumes, and market volatility (VIX), as well as gold prices. We also compare the predictive power of traditional investor sentiment survey data, i.e. Investor Intelligence and Daily Sentiment Index, against those of the mentioned set of online sentiment indicators. Our results show that traditional surveys of Investor Intelligence are lagging indicators of the financial markets. However, weekly Google Insight Search volumes on financial search queries do have predictive value. An indicator of Twitter Investor Sentiment and the frequency of occurrence of financial terms on Twitter in the previous 1-2 days are also found to be very statistically significant predictors of daily market log return. Survey sentiment indicators are however found not to be statistically significant predictors of financial market values, once we control for all other mood indicators as well as the VIX.</b:BIBTEX_Abstract>
+		<b:BIBTEX_KeyWords>Quantitative Finance - Statistical Finance, Computer Science - Computational Engineering, Finance, and Science, Physics - Physics and Society</b:BIBTEX_KeyWords>
+		<b:RefOrder>3</b:RefOrder></b:Source>
+	<b:Source>
+		<b:SourceType>JournalArticle</b:SourceType>
+		<b:Tag>JohanBollenMarch2011</b:Tag>
+		<b:Title>Twitter mood predicts the stock market</b:Title>
+		<b:Year>March 2011</b:Year>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Johan Bollen</b:Last>
+						<b:Middle>Mao, Xiao-Jun Zeng</b:Middle>
+						<b:First>Huina</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:Pages>Pages 1-8</b:Pages>
+		<b:JournalName>Journal of Computational Science, 2(1)</b:JournalName>
+		<b:URL>http://arxiv.org/abs/1010.3003</b:URL>
+		<b:BIBTEX_Abstract>Behavioral economics tells us that emotions can profoundly affect individual behavior and decision-making. Does this also apply to societies at large, i.e. can societies experience mood states that affect their collective decision making? By extension is the public mood correlated or even predictive of economic indicators? Here we investigate whether measurements of collective mood states derived from large-scale Twitter feeds are correlated to the value of the Dow Jones Industrial Average (DJIA) over time. We analyze the text content of daily Twitter feeds by two mood tracking tools, namely OpinionFinder that measures positive vs. negative mood and Google-Proﬁle of Mood States (GPOMS) that measures mood in terms of 6 dimensions (Calm, Alert, Sure, Vital, Kind, and Happy). We cross-validate the resulting mood time series by comparing their ability to detect the public’s response to the presidential election and Thanksgiving day in 2008. A Granger causality analysis and a Self-Organizing Fuzzy Neural Network are then used to investigatethehypothesisthatpublicmoodstates,asmeasuredby the OpinionFinder and GPOMS mood time series, are predictive of changes in DJIA closing values. Our results indicate that the accuracy of DJIA predictions can be signiﬁcantly improved by the inclusion of speciﬁc public mood dimensions but not others. We ﬁnd an accuracy of 87.6% in predicting the daily up and down changes in the closing values of the DJIA and a reduction of the Mean Average Percentage Error by more than 6%. Index Terms—stock market prediction — twitter — mood analysis.</b:BIBTEX_Abstract>
+		<b:RefOrder>1</b:RefOrder></b:Source>
+	<b:Source>
+		<b:SourceType>JournalArticle</b:SourceType>
+		<b:Tag>Essex2013</b:Tag>
+		<b:Title>Exploiting the Big Data advantage - right-sizing for FX algorithms</b:Title>
+		<b:Year>2013</b:Year>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Essex</b:Last>
+						<b:First>William</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:Volume>April</b:Volume>
+		<b:JournalName>e-Forex Magazine</b:JournalName>
+		<b:URL>http://www.e-forex.net/articles/free/Algorithmic+FX+Trading/1808/Exploiting+the+Big+Data+advantage+-+right-sizing+for+FX+algorithms</b:URL>
+		<b:RefOrder>8</b:RefOrder></b:Source>
+	<b:Source>
+		<b:SourceType>JournalArticle</b:SourceType>
+		<b:Tag>RePEc:ijf:ijfiec:v:15:y:2010:i:1:p:1-21</b:Tag>
+		<b:Title>Non-linearities in the relation between the exchange rate and its fundamentals</b:Title>
+		<b:Year>2010</b:Year>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Altavilla</b:Last>
+						<b:First>Carlo</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Grauwe</b:Last>
+						<b:Middle>De</b:Middle>
+						<b:First>Paul</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:Pages>1-21</b:Pages>
+		<b:Volume>15</b:Volume>
+		<b:JournalName>International Journal of Finance \&amp; Economics</b:JournalName>
+		<b:Issue>1</b:Issue>
+		<b:URL>http://ideas.repec.org/a/ijf/ijfiec/v15y2010i1p1-21.html</b:URL>
+		<b:BIBTEX_Abstract>We develop a simple theoretical model in which chartists and fundamentalists interact. The model predicts the existence of different regimes, and thus non-linearities in the link between the exchange rate and its fundamentals. We test the model empirically by adopting a Markov-switching vector error correction model. The results suggest the presence of non-linear mean reversion in the nominal exchange rate process. The implications are that different sets of macroeconomic fundamentals act as driving forces of the exchange rates during different time periods. Copyright © 2008 John Wiley \&amp; Sons, Ltd.</b:BIBTEX_Abstract>
+		<b:RefOrder>9</b:RefOrder></b:Source>
+	<b:Source>
+		<b:SourceType>BookSection</b:SourceType>
+		<b:BIBTEX_Entry>incollection</b:BIBTEX_Entry>
+		<b:Tag>raey</b:Tag>
+		<b:Title>Using the Web to Monitor a Customized Unified Financial Portfolio</b:Title>
+		<b:Year>2012</b:Year>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Restrepo-Arango</b:Last>
+						<b:First>Camilo</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Henao-Chaparro</b:Last>
+						<b:First>Arturo</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>JimÃ©nez-GuarÃ­n</b:Last>
+						<b:First>Claudia</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+			<b:Editor>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Castano</b:Last>
+						<b:First>Silvana</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Vassiliadis</b:Last>
+						<b:First>Panos</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Lakshmanan</b:Last>
+						<b:First>LaksV.</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Lee</b:Last>
+						<b:First>MongLi</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Editor>
+		</b:Author>
+		<b:Pages>358-367</b:Pages>
+		<b:Volume>7518</b:Volume>
+		<b:StandardNumber> ISBN: 978-3-642-33998-1 DOI: 10.1007/978-3-642-33999-8_42</b:StandardNumber>
+		<b:Publisher>Springer Berlin Heidelberg</b:Publisher>
+		<b:BookTitle>Advances in Conceptual Modeling</b:BookTitle>
+		<b:ConferenceName>Advances in Conceptual Modeling</b:ConferenceName>
+		<b:URL>http://dx.doi.org/10.1007/978-3-642-33999-8_42</b:URL>
+		<b:BIBTEX_Series>Lecture Notes in Computer Science</b:BIBTEX_Series>
+		<b:BIBTEX_Abstract>Unified Financial Portfolio is a financial application that applies con- cepts of information retrieval and Web 2.0 to provide a better understanding of the market trends taking into account the users information needs. It integrates and retrieves non-structured content related to the financial domain, from social networks, Stock Exchange and newspapers. The main contributions of this work are the software architecture, the content based semantic search model and the use of Big Data technology. The model is based on the vector-space model, including a retrieval weighting algorithm using domain specific consid- erations. This paper presents the application evaluation, using a large amount of unstructured content from dynamic and social web content sources. 
+Keywords: Web 2.0, Sentiment Analysis, Social Content, NoSQL database, In- formation Retrieval</b:BIBTEX_Abstract>
+		<b:BIBTEX_KeyWords>Web 2.0; Sentiment Analysis; Social Content; NoSQL database; Information Retrieval</b:BIBTEX_KeyWords>
+		<b:RefOrder>10</b:RefOrder></b:Source>
+	<b:Source><b:Tag>MIN13</b:Tag><b:SourceType>DocumentFromInternetSite</b:SourceType><b:Guid>{B02485B4-1725-4932-B352-7E072E64D67C}</b:Guid><b:Title>Notas Fiscales - Siguiendo la actividad sectorial a partir de Google Trends</b:Title><b:Year>2013</b:Year><b:Month>noviembre</b:Month><b:YearAccessed>2014</b:YearAccessed><b:MonthAccessed>mayo</b:MonthAccessed><b:DayAccessed>13</b:DayAccessed><b:URL>http://www.minhacienda.gov.co/portal/page/portal/HomeMinhacienda/politicafiscal/reportesmacroeconomicos/NotasFiscales/22%20Siguiendo%20la%20actividad%20sectorial%20a%20partir%20de%20Google%20Trends.pdf</b:URL><b:Author><b:Author><b:Corporate>MINISTERIO DE HACIENDA Y CRÉDITO PÚBLICO</b:Corporate></b:Author></b:Author><b:RefOrder>6</b:RefOrder></b:Source><b:Source><b:Tag>Pap13</b:Tag><b:SourceType>JournalArticle</b:SourceType><b:Guid>{FBF506A2-718F-455A-87FA-63D649EBC296}</b:Guid><b:Title>Can social microblogging be used to forecast intraday exchange rates?</b:Title><b:JournalName>NETNOMICS: Economic Research and Electronic Networking</b:JournalName><b:Year>2013</b:Year><b:Pages>47-68</b:Pages><b:Volume>14</b:Volume><b:Issue>1-2</b:Issue><b:Author><b:Author><b:NameList><b:Person><b:Last>Papaioannou</b:Last><b:First>Panagiotis</b:First></b:Person><b:Person><b:Last>Russo</b:Last><b:First>Lucia</b:First></b:Person><b:Person><b:Last>Papaioannou</b:Last><b:First>George</b:First></b:Person><b:Person><b:Last>Siettos</b:Last><b:First>ConstantinosI</b:First></b:Person></b:NameList></b:Author></b:Author><b:URL>http://dx.doi.org/10.1007/s11066-013-9079-3</b:URL><b:RefOrder>4</b:RefOrder></b:Source><b:Source><b:SourceType>DocumentFromInternetSite</b:SourceType><b:BIBTEX_Entry>unpublished</b:BIBTEX_Entry><b:Tag>Karabulut2012</b:Tag><b:Title>Can Facebook Predict Stock Market Activity</b:Title><b:Year>2013</b:Year><b:Author><b:Author><b:NameList><b:Person><b:Last>Karabulut</b:Last><b:First>Yigitcan</b:First></b:Person></b:NameList></b:Author></b:Author><b:ThesisType>unpublished</b:ThesisType><b:BIBTEX_Abstract>Using a novel and direct measure of investor sentiment, I ﬁnd that Facebook’s Gross National
+Happiness (GNH) has the ability to predict changes in both daily returns and trading volume in the
+US stock market. For instance, an increase of one standard deviation in GNH is associated with
+an increase of 11:23 basis points in market returns over the next day. Consistent with noise trader
+models, the inﬂuence of GNH on market returns is temporary and is reversed during the following
+trading weeks. I also verify the empirical validity of GNH by performing several tests in different
+natural settings</b:BIBTEX_Abstract><b:Guid>{1867E68A-2EE0-4353-8ADF-91A4A35F2FBE}</b:Guid><b:Publisher>Goethe University Frankfurt</b:Publisher><b:URL>https://www.ecb.europa.eu/events/pdf/conferences/140407/Karabulut_CanFacebookPredictStockMarketActivitiy.pdf?8f1a9a6dec415d891c42f5e649b7ac15</b:URL><b:City>Frankfurt</b:City><b:Month>octubre</b:Month><b:Day>21</b:Day><b:YearAccessed>2014</b:YearAccessed><b:MonthAccessed>febrero</b:MonthAccessed><b:DayAccessed>15</b:DayAccessed><b:RefOrder>2</b:RefOrder></b:Source></b:Sources>
